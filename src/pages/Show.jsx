@@ -1,29 +1,35 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getShowById } from '../api/tvmaze';
+import { useQuery } from 'react-query';
 
-const useShowById = showId => {
-  const [showData, setShowData] = useState(null);
-  const [showError, setShowError] = useState(null);
+// const useShowById = showId => {
+//   const [showData, setShowData] = useState(null);
+//   const [showError, setShowError] = useState(null);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const data = await getShowById(showId);
-        setShowData(data);
-        console.log(data);
-      } catch (error) {
-        setShowError(error);
-      }
-    }
+//   useEffect(() => {
+//     async function fetchData() {
+//       try {
+//         const data = await getShowById(showId);
+//         setShowData(data);
+//         console.log(data);
+//       } catch (error) {
+//         setShowError(error);
+//       }
+//     }
 
-    fetchData();
-  }, [showId]);
-  return { showData, showError };
-};
+//     fetchData();
+//   }, [showId]);
+//   return { showData, showError };
+// };
 const Show = () => {
   const { showId } = useParams();
-  const { showError, showData } = useShowById(showId);
+  // const { showError, showData } = useShowById(showId);
+
+  const { data: showData, error: showError } = useQuery({
+    queryKey: ['show', showId],
+    queryFn: () => getShowById(showId),
+  });
 
   if (showError) {
     return <div>We have an error: {showError.message}</div>;
