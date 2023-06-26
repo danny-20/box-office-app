@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import Starred from './pages/Starred';
 import MainLayout from './components/MainLayout';
 import Show from './pages/Show';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Create a client
 const queryClient = new QueryClient();
