@@ -6,7 +6,7 @@ import ShowMainData from '../components/shows/ShowMainData';
 import Details from '../components/shows/Details';
 import Seasons from '../components/shows/Seasons';
 import Cast from '../components/shows/Cast';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import { TextCenter } from '../components/common/TextCenter';
 
 // const useShowById = showId => {

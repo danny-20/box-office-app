@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import { StarIcon } from '../common/StarIcon';
 
 const ShowMainData = ({ image, name, rating, summary, genres }) => {

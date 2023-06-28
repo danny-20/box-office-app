@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchStr } from '../lib/UseSearchStr';
 import CustomRadio from './CustomRadio';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 const SearchForm = ({ onSearch }) => {
   const [searchStr, setSearchStr] = useSearchStr();

@@ -1,22 +1,16 @@
-import React from 'react'
 import styled from 'styled-components';
 
-const CustomRadio = ({label, ...inputProps}) => {
-   
+const CustomRadio = ({ label, ...inputProps }) => {
   return (
     <StyledRadio>
-    {label}
-    <input
-     {...inputProps}
-     type="radio"
-    />
-    <span/>
-  </StyledRadio>
-  )
-}
+      {label}
+      <input {...inputProps} type="radio" />
+      <span />
+    </StyledRadio>
+  );
+};
 
 export default CustomRadio;
-
 
 const StyledRadio = styled.label`
   display: block;
